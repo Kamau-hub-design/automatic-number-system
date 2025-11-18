@@ -1,50 +1,4 @@
-// Improved Number Converter with negative/fractional support, input validation, error feedback, and copy-to-clipboard feature.
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class ConversionRecord {
-  final String input;
-  final int base;
-  final String decimal;
-  final String binary;
-  final String octal;
-  final String hex;
-
-  ConversionRecord({
-    required this.input,
-    required this.base,
-    required this.decimal,
-    required this.binary,
-    required this.octal,
-    required this.hex,
-  });
-
-  Map<String, dynamic> toJson() => {
-        'input': input,
-        'base': base,
-        'decimal': decimal,
-        'binary': binary,
-        'octal': octal,
-        'hex': hex,
-      };
-
-  factory ConversionRecord.fromJson(Map<String, dynamic> json) => ConversionRecord(
-        input: json['input'],
-        base: json['base'],
-        decimal: json['decimal'],
-        binary: json['binary'],
-        octal: json['octal'],
-        hex: json['hex'],
-      );
-}
-
-class MyApp extends StatelessWidget {
+ MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
@@ -425,3 +379,4 @@ class _HistoryScreenState extends State<HistoryScreen> {
     );
   }
 }
+
